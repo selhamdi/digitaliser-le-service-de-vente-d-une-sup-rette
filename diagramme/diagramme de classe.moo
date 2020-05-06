@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{0D62B70D-850E-43FC-85C2-2C5B2FBE7A3F}" Label="" LastModificationDate="1588789316" Name="classe" Objects="42" Symbols="14" Target="Analyse" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{0D62B70D-850E-43FC-85C2-2C5B2FBE7A3F}" Label="" LastModificationDate="1588790547" Name="classe" Objects="39" Symbols="12" Target="Analyse" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -2489,8 +2489,8 @@ Shadow=0</a:DisplayPreferences>
 <o:AssociationSymbol Id="o6">
 <a:CreationDate>1588758820</a:CreationDate>
 <a:ModificationDate>1588789316</a:ModificationDate>
-<a:Rect>((8550,-15975), (21495,-755))</a:Rect>
-<a:ListOfPoints>((8550,-15975),(19621,-15975),(19621,-755))</a:ListOfPoints>
+<a:Rect>((8958,-15975), (21495,-755))</a:Rect>
+<a:ListOfPoints>((8958,-15975),(19621,-15975),(19621,-755))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>3592</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
@@ -2572,8 +2572,8 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o19">
 <a:CreationDate>1588763932</a:CreationDate>
 <a:ModificationDate>1588789316</a:ModificationDate>
-<a:Rect>((-4761,-21498), (3376,-2100))</a:Rect>
-<a:ListOfPoints>((3376,-20325),(-4761,-20325),(-4761,-2100))</a:ListOfPoints>
+<a:Rect>((-4761,-21498), (2559,-2100))</a:Rect>
+<a:ListOfPoints>((2559,-20325),(-4761,-20325),(-4761,-2100))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>3336</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
@@ -2683,7 +2683,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:CreationDate>1588701369</a:CreationDate>
 <a:ModificationDate>1588789316</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((2745,-23845), (10905,-15155))</a:Rect>
+<a:Rect>((1779,-23845), (11871,-15155))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>8637161</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -2954,11 +2954,11 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Class>
 <o:Class Id="o27">
 <a:ObjectID>24635395-9544-4959-9A5E-A910C2BE148F</a:ObjectID>
-<a:Name>User</a:Name>
-<a:Code>User</a:Code>
+<a:Name>Users</a:Name>
+<a:Code>Users</a:Code>
 <a:CreationDate>1588701369</a:CreationDate>
 <a:Creator>admin</a:Creator>
-<a:ModificationDate>1588701369</a:ModificationDate>
+<a:ModificationDate>1588790547</a:ModificationDate>
 <a:Modifier>admin</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <a:Classifier.Header>/***********************************************************************
@@ -3014,22 +3014,22 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Attribute>
 <o:Attribute Id="o47">
 <a:ObjectID>D63883C4-318A-4284-95AA-CAB9653BEE8F</a:ObjectID>
-<a:Name>password</a:Name>
-<a:Code>password</a:Code>
+<a:Name>password_user</a:Name>
+<a:Code>password_user</a:Code>
 <a:CreationDate>1588701369</a:CreationDate>
 <a:Creator>admin</a:Creator>
-<a:ModificationDate>1588701531</a:ModificationDate>
+<a:ModificationDate>1588790547</a:ModificationDate>
 <a:Modifier>admin</a:Modifier>
 <a:DataType>String</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
 <o:Attribute Id="o48">
 <a:ObjectID>8780E512-7634-4FFE-9688-F556AE9A6BF2</a:ObjectID>
-<a:Name>type</a:Name>
-<a:Code>type</a:Code>
+<a:Name>type_user</a:Name>
+<a:Code>type_user</a:Code>
 <a:CreationDate>1588701369</a:CreationDate>
 <a:Creator>admin</a:Creator>
-<a:ModificationDate>1588701531</a:ModificationDate>
+<a:ModificationDate>1588790547</a:ModificationDate>
 <a:Modifier>admin</a:Modifier>
 <a:DataType>String</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
@@ -3126,7 +3126,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>Association_5</a:Code>
 <a:CreationDate>1588759335</a:CreationDate>
 <a:Creator>admin</a:Creator>
-<a:ModificationDate>1588789140</a:ModificationDate>
+<a:ModificationDate>1588790522</a:ModificationDate>
 <a:Modifier>admin</a:Modifier>
 <a:RoleAIndicator>A</a:RoleAIndicator>
 <a:RoleAMultiplicity>1..*</a:RoleAMultiplicity>
@@ -3144,7 +3144,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>Association_4</a:Code>
 <a:CreationDate>1588763932</a:CreationDate>
 <a:Creator>admin</a:Creator>
-<a:ModificationDate>1588789165</a:ModificationDate>
+<a:ModificationDate>1588790522</a:ModificationDate>
 <a:Modifier>admin</a:Modifier>
 <a:RoleAIndicator>A</a:RoleAIndicator>
 <a:RoleAMultiplicity>0..*</a:RoleAMultiplicity>

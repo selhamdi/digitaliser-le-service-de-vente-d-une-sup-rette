@@ -2,7 +2,9 @@
 /* Nom de SGBD :  MySQL 5.0                                     */
 /* Date de creation :  06/05/2020 18:23:27                      */
 /*==============================================================*/
+create schema vente;
 
+use vente;
 
 drop table if exists Categorie;
 
@@ -21,8 +23,8 @@ drop table if exists Users;
 /*==============================================================*/
 create table Categorie
 (
-   idCategorie          int not null,
-   nomCategorie         varchar(254) not null,
+   idCategorie          int not null auto_increment,
+   nomCategorie         varchar(254) not null unique,
    primary key (idCategorie)
 );
 
@@ -31,11 +33,11 @@ create table Categorie
 /*==============================================================*/
 create table Commande
 (
-   idCommande           int not null,
+   idCommande           int not null auto_increment,
    idUser               int,
    dateCommande         datetime not null,
-   PrixUT               float not null,
-   etat_commande        varchar(254),
+   PrixUT               float not null check(PrixUT>0),
+   etat_commande        varchar(254) check(etat_commande in('terminer','en cours','refusser')),
    primary key (idCommande)
 );
 
@@ -44,20 +46,20 @@ create table Commande
 /*==============================================================*/
 create table LigneCommande
 (
-   idProduit            int not null,
+   idProduit            int not null auto_increment,
    idCommande           int not null,
-   qteLigneCommande     int not null,
+   qteLigneCommande     int not null check(qteLigneCommande>0),
    primary key (idProduit, idCommande)
 );
 
 /*==============================================================*/
 /* Table : LignePanier                                          */
 /*==============================================================*/
-create table LignePanier
+create table Panier
 (
    idProduit            int not null,
    idUser               int not null,
-   qteLignePanier       int not null,
+   qteLignePanier       int not null check(qteLignePanier>0),
    primary key (idProduit, idUser)
 );
 
@@ -66,13 +68,13 @@ create table LignePanier
 /*==============================================================*/
 create table Produit
 (
-   idProduit            int not null,
+   idProduit            int not null auto_increment,
    idCategorie          int,
    nomProdui            varchar(254) not null,
-   prix                 float not null,
-   quantiteStock        int not null,
-   imageProduit         bigint not null,
-   produtit_panier_standard bool,
+   prix                 float not null check(prix>0),
+   quantiteStock        int not null check(quantiteStock>=0),
+   imageProduit         longblob not null,
+   produtit_panier_standard bool default false,
    qte_ligne_panier_standard int,
    primary key (idProduit)
 );
@@ -82,12 +84,12 @@ create table Produit
 /*==============================================================*/
 create table Users
 (
-   idUser               int not null,
+   idUser               int not null auto_increment,
    nom                  varchar(254) not null,
    prenom               varchar(254) not null,
    email                varchar(254) not null,
-   password             varchar(254) not null,
-   type                 varchar(254),
+   password_user        varchar(254) not null,
+   type_user            varchar(254),
    primary key (idUser)
 );
 
@@ -97,13 +99,13 @@ alter table Commande add constraint FK_Association_1 foreign key (idUser)
 alter table LigneCommande add constraint FK_Association_5 foreign key (idCommande)
       references Commande (idCommande) on delete restrict on update restrict;
 
-alter table LigneCommande add constraint FK_Association_5 foreign key (idProduit)
+alter table LigneCommande add constraint FK_Association_6 foreign key (idProduit)
       references Produit (idProduit) on delete restrict on update restrict;
 
-alter table LignePanier add constraint FK_Association_4 foreign key (idProduit)
+alter table Panier add constraint FK_Association_3 foreign key (idProduit)
       references Produit (idProduit) on delete restrict on update restrict;
 
-alter table LignePanier add constraint FK_Association_4 foreign key (idUser)
+alter table Panier add constraint FK_Association_4 foreign key (idUser)
       references Users (idUser) on delete restrict on update restrict;
 
 alter table Produit add constraint FK_Association_2 foreign key (idCategorie)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{E6BA5963-8E61-46E4-B455-D5AF58BEC1CE}" Label="" LastModificationDate="1588789273" Name="physique" Objects="75" Symbols="14" Target="MySQL 5.0" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" signature="PDM_DATA_MODEL_XML" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{E6BA5963-8E61-46E4-B455-D5AF58BEC1CE}" Label="" LastModificationDate="1588790513" Name="physique" Objects="66" Symbols="12" Target="MySQL 5.0" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" signature="PDM_DATA_MODEL_XML" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -1831,7 +1831,7 @@ Shadow=0
 <o:ReferenceSymbol Id="o6">
 <a:ModificationDate>1588789273</a:ModificationDate>
 <a:Rect>((10331,-18150), (20682,2152))</a:Rect>
-<a:ListOfPoints>((20682,2152),(20682,-6675),(10331,-6675),(10331,-18150))</a:ListOfPoints>
+<a:ListOfPoints>((20682,2152),(20682,-6675),(10331,-6675),(10524,-18150))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
@@ -1914,8 +1914,8 @@ DESTINATION 0 Microsoft Sans Serif,8,N</a:FontList>
 </o:ReferenceSymbol>
 <o:ReferenceSymbol Id="o19">
 <a:ModificationDate>1588789273</a:ModificationDate>
-<a:Rect>((-23737,-20837), (4051,-9223))</a:Rect>
-<a:ListOfPoints>((-20250,-9223),(-20250,-20250),(4051,-20250))</a:ListOfPoints>
+<a:Rect>((-23737,-20837), (3149,-9223))</a:Rect>
+<a:ListOfPoints>((-20250,-9223),(-20250,-20250),(3149,-20250))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
@@ -2029,7 +2029,7 @@ LABL 0 Arial,8,N</a:FontList>
 <o:TableSymbol Id="o8">
 <a:ModificationDate>1588789273</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((3690,-24408), (14760,-16992))</a:Rect>
+<a:Rect>((2725,-24408), (15725,-16992))</a:Rect>
 <a:LineColor>16744448</a:LineColor>
 <a:FillColor>8637161</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -2255,12 +2255,13 @@ ATT MAND</a:History>
 <a:Code>imageProduit</a:Code>
 <a:CreationDate>1588763989</a:CreationDate>
 <a:Creator>admin</a:Creator>
-<a:ModificationDate>1588764113</a:ModificationDate>
+<a:ModificationDate>1588790472</a:ModificationDate>
 <a:Modifier>admin</a:Modifier>
 <a:History>ORG {0FDD599D-F988-427E-8318-C1B5A0309E46}
 DAT 1588763989
-ATT MAND</a:History>
-<a:DataType>bigint</a:DataType>
+ATT MAND
+ATT DTTP</a:History>
+<a:DataType>longblob</a:DataType>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
 <o:Column Id="o39">
@@ -2458,15 +2459,17 @@ DAT 1588763989</a:History>
 </o:Table>
 <o:Table Id="o27">
 <a:ObjectID>6A05A19A-B1BA-43AD-B520-AE325D5C18B8</a:ObjectID>
-<a:Name>User</a:Name>
-<a:Code>User</a:Code>
+<a:Name>Users</a:Name>
+<a:Code>Users</a:Code>
 <a:CreationDate>1588763989</a:CreationDate>
 <a:Creator>admin</a:Creator>
-<a:ModificationDate>1588764740</a:ModificationDate>
+<a:ModificationDate>1588790427</a:ModificationDate>
 <a:Modifier>admin</a:Modifier>
 <a:History>ORG {24635395-9544-4959-9A5E-A910C2BE148F}
 DAT 1588763989
-ATT PRIK</a:History>
+ATT PRIK
+ATT NAME
+ATT CODE</a:History>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o52">
@@ -2531,29 +2534,33 @@ ATT MAND</a:History>
 </o:Column>
 <o:Column Id="o56">
 <a:ObjectID>8A081270-706C-477D-8D6E-3B36B3B2BF8E</a:ObjectID>
-<a:Name>password</a:Name>
-<a:Code>password</a:Code>
+<a:Name>password_user</a:Name>
+<a:Code>password_user</a:Code>
 <a:CreationDate>1588763989</a:CreationDate>
 <a:Creator>admin</a:Creator>
-<a:ModificationDate>1588764679</a:ModificationDate>
+<a:ModificationDate>1588790427</a:ModificationDate>
 <a:Modifier>admin</a:Modifier>
 <a:History>ORG {D63883C4-318A-4284-95AA-CAB9653BEE8F}
 DAT 1588763989
-ATT MAND</a:History>
+ATT MAND
+ATT NAME
+ATT CODE</a:History>
 <a:DataType>varchar(254)</a:DataType>
 <a:Length>254</a:Length>
 <a:Mandatory>1</a:Mandatory>
 </o:Column>
 <o:Column Id="o57">
 <a:ObjectID>932B39FE-7CAB-4B8E-9012-2E8A0C4996AE</a:ObjectID>
-<a:Name>type</a:Name>
-<a:Code>type</a:Code>
+<a:Name>type_user</a:Name>
+<a:Code>type_user</a:Code>
 <a:CreationDate>1588763989</a:CreationDate>
 <a:Creator>admin</a:Creator>
-<a:ModificationDate>1588764740</a:ModificationDate>
+<a:ModificationDate>1588790427</a:ModificationDate>
 <a:Modifier>admin</a:Modifier>
 <a:History>ORG {8780E512-7634-4FFE-9688-F556AE9A6BF2}
-DAT 1588763989</a:History>
+DAT 1588763989
+ATT NAME
+ATT CODE</a:History>
 <a:DataType>varchar(254)</a:DataType>
 <a:Length>254</a:Length>
 </o:Column>
@@ -2578,15 +2585,17 @@ DAT 1588763989</a:History>
 </o:Table>
 <o:Table Id="o28">
 <a:ObjectID>A590D897-F276-41CD-985B-3F78C2139F34</a:ObjectID>
-<a:Name>LignePanier</a:Name>
-<a:Code>LignePanier</a:Code>
+<a:Name>Panier</a:Name>
+<a:Code>Panier</a:Code>
 <a:CreationDate>1588763989</a:CreationDate>
 <a:Creator>admin</a:Creator>
-<a:ModificationDate>1588789266</a:ModificationDate>
+<a:ModificationDate>1588790513</a:ModificationDate>
 <a:Modifier>admin</a:Modifier>
 <a:History>ORG {58AABC2E-928B-4A87-89A2-9D838EEBF1DD}
 DAT 1588763989
-ATT PRIK</a:History>
+ATT PRIK
+ATT NAME
+ATT CODE</a:History>
 <a:TotalSavingCurrency/>
 <c:Columns>
 <o:Column Id="o59">
