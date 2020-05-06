@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* Nom de SGBD :  MySQL 5.0                                     */
-/* Date de creation :  06/05/2020 11:46:46                      */
+/* Date de creation :  06/05/2020 18:23:27                      */
 /*==============================================================*/
 
 
@@ -12,11 +12,9 @@ drop table if exists LigneCommande;
 
 drop table if exists LignePanier;
 
-drop table if exists Panier;
-
 drop table if exists Produit;
 
-drop table if exists User;
+drop table if exists Users;
 
 /*==============================================================*/
 /* Table : Categorie                                            */
@@ -58,19 +56,9 @@ create table LigneCommande
 create table LignePanier
 (
    idProduit            int not null,
-   idPanier             int not null,
-   qteLignePanier       int not null,
-   primary key (idProduit, idPanier)
-);
-
-/*==============================================================*/
-/* Table : Panier                                               */
-/*==============================================================*/
-create table Panier
-(
-   idPanier             int not null,
    idUser               int not null,
-   primary key (idPanier)
+   qteLignePanier       int not null,
+   primary key (idProduit, idUser)
 );
 
 /*==============================================================*/
@@ -92,7 +80,7 @@ create table Produit
 /*==============================================================*/
 /* Table : User                                                 */
 /*==============================================================*/
-create table User
+create table Users
 (
    idUser               int not null,
    nom                  varchar(254) not null,
@@ -104,7 +92,7 @@ create table User
 );
 
 alter table Commande add constraint FK_Association_1 foreign key (idUser)
-      references User (idUser) on delete restrict on update restrict;
+      references Users (idUser) on delete restrict on update restrict;
 
 alter table LigneCommande add constraint FK_Association_5 foreign key (idCommande)
       references Commande (idCommande) on delete restrict on update restrict;
@@ -112,14 +100,11 @@ alter table LigneCommande add constraint FK_Association_5 foreign key (idCommand
 alter table LigneCommande add constraint FK_Association_5 foreign key (idProduit)
       references Produit (idProduit) on delete restrict on update restrict;
 
-alter table LignePanier add constraint FK_Association_4 foreign key (idPanier)
-      references Panier (idPanier) on delete restrict on update restrict;
-
 alter table LignePanier add constraint FK_Association_4 foreign key (idProduit)
       references Produit (idProduit) on delete restrict on update restrict;
 
-alter table Panier add constraint FK_Reference_7 foreign key (idUser)
-      references User (idUser) on delete restrict on update restrict;
+alter table LignePanier add constraint FK_Association_4 foreign key (idUser)
+      references Users (idUser) on delete restrict on update restrict;
 
 alter table Produit add constraint FK_Association_2 foreign key (idCategorie)
       references Categorie (idCategorie) on delete restrict on update restrict;
