@@ -70,12 +70,12 @@ create table Produit
 (
    idProduit            int not null auto_increment,
    idCategorie          int,
-   nomProdui            varchar(254) not null,
+   nomProdui            varchar(254) not null unique,
    prix                 float not null check(prix>0),
    quantiteStock        int not null check(quantiteStock>=0),
    imageProduit         longblob not null,
    produtit_panier_standard bool default false,
-   qte_ligne_panier_standard int,
+   qte_ligne_panier_standard int default 0,
    primary key (idProduit)
 );
 
@@ -87,7 +87,7 @@ create table Users
    idUser               int not null auto_increment,
    nom                  varchar(254) not null,
    prenom               varchar(254) not null,
-   email                varchar(254) not null,
+   email                varchar(254) not null unique,
    password_user        varchar(254) not null,
    type_user            varchar(254),
    primary key (idUser)
