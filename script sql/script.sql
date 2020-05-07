@@ -37,7 +37,7 @@ create table Commande
    idUser               int,
    dateCommande         datetime not null,
    PrixUT               float not null check(PrixUT>0),
-   etat_commande        varchar(254) check(etat_commande in('terminer','en cours','refusser')),
+   etat_commande        varchar(254) check(etat_commande in('terminer','en attente','refusser')),
    primary key (idCommande)
 );
 
@@ -89,9 +89,11 @@ create table Users
    prenom               varchar(254) not null,
    email                varchar(254) not null unique,
    password_user        varchar(254) not null,
-   type_user            varchar(254),
+   type_user            varchar(254) check(type_user in('admin','client')) default 'client',
    primary key (idUser)
 );
+
+insert into users(nom,prenom,email,password_user,type_user) values('admin','admin','admin@gmail.com','aaaaaaaa','admin'); 
 
 alter table Commande add constraint FK_Association_1 foreign key (idUser)
       references Users (idUser) on delete restrict on update restrict;
