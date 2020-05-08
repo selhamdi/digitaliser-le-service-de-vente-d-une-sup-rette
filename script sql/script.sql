@@ -89,7 +89,7 @@ create table Users
    prenom               varchar(254) not null,
    email                varchar(254) not null unique,
    password_user        varchar(254) not null,
-   type_user            varchar(254) check(type_user in('admin','client')) default 'client',
+   type_user            varchar(254) check(type_user in('admin','client')),
    primary key (idUser)
 );
 

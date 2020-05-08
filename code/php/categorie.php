@@ -1,8 +1,18 @@
 <?php
     include('menu.php');
     include('header.php');
-
-    echo '<table class="table table-striped table-dark">
+    echo '<form>
+        <div class="form-row align-items-center">
+            <div class="col-auto">
+            <label class="sr-only" for="inlineFormInput">Name</label>
+            <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Nome catégorie">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-light btn-lg">ajouter</button>
+            </div>
+        </div>
+    </form>';
+    echo '<table class="table table-striped">
         <thead>
         <tr>
             <th scope="col">id catégorie</th>
