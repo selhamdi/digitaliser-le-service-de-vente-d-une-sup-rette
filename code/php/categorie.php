@@ -2,7 +2,7 @@
     include('menu.php');
     include('header.php');
     echo '<form method="POST" action="">
-        <div class="form-row align-items-center">
+        <div class="form-row align-items-center divstandard">
             <div class="col-auto">
             <label class="sr-only" for="inlineFormInput">Name</label>
             <input type="text" class="form-control mb-2" id="inlineFormInput" name="nomCat" placeholder="Nome catégorie">
@@ -25,7 +25,7 @@
 
     if ($result->num_rows > 0) {
         // output data of each row
-        echo '<table class="table table-striped">
+        echo '<table class="table table-striped divstandard">
             <thead>
             <tr>
                 <th scope="col">id catégorie</th>
@@ -76,10 +76,11 @@
             if ($conn->query($sql) === TRUE) {
             echo "<script>alert(\"ajouter catégorie terminer avec succès\")</script>";
             } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error";
             }
             $conn->close();
             header("Refresh:0");
+            echo '<script language="Javascript">document.location.replace("'.$_SERVER['SCRIPT_NAME']."?".$_SERVER['QUERY_STRING'].'"); </script>';
         }
     }
 ?>
