@@ -116,7 +116,6 @@
             }
             $conn->close();
             header("Refresh:0");
-            echo '<script language="Javascript">document.location.replace("'.$_SERVER['SCRIPT_NAME']."?".$_SERVER['QUERY_STRING'].'"); </script>'; 
         }
     }
 ?>

@@ -86,4 +86,6 @@
         <script src="../js/bootstrap.min.js"></script>
     </body>
     </html>';
+    
+    echo '<script language="Javascript">document.location.replace("'.$_SERVER['SCRIPT_NAME']."?".$_SERVER['QUERY_STRING'].'"); </script>';
 ?>
