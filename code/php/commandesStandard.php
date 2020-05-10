@@ -9,7 +9,7 @@
     die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT commande.idCommande,users.nom,users.prenom,commande.adresse,commande.telephone,commande.dateCommande FROM commande,users WHERE commande.etat_commande='en attente' AND commande.is_standard=0 AND commande.idUser=users.idUser ORDER BY commande.dateCommande ASC";
+    $sql = "SELECT commande.idCommande,users.nom,users.prenom,commande.adresse,commande.telephone,commande.dateCommande FROM commande,users WHERE commande.etat_commande='en attente' AND commande.is_standard=1 AND commande.idUser=users.idUser ORDER BY commande.dateCommande ASC";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {

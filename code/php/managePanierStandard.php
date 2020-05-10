@@ -8,14 +8,14 @@
     die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM `produit` ORDER BY `produit`.`idProduit` ASC ";
+    $sql = "SELECT * FROM `produit` where produtit_panier_standard=1 ORDER BY `produit`.`idProduit` ASC ";
     $result = mysqli_query($conn, $sql);  
                   
     if ($result->num_rows > 0) {
         echo '<div class="row">';
         while($row = mysqli_fetch_array($result))  
                 {  
-                    echo '<div class="col-sm-4 cardProduit">
+                    echo '<div class="col-sm-4">
                     <div class="card">
                     <img src="data:image/jpeg;base64,'.base64_encode($row['imageProduit'] ).'" class="card-img-top" height="200" />  
                     <div class="card-body">
@@ -26,9 +26,7 @@
                     </div>
                     </div>';  
                 }
-        echo '</div>
-        <a href="addProduit.php"><button type="button" class="btn btn-light btn-lg">Ajouter Produit</button></a>';
-        
+        echo '</div>';
     } 
     else {
     echo '<p class="text-center font-weight-bolder">Aucun Produit</p>';

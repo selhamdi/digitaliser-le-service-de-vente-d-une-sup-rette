@@ -1,6 +1,4 @@
 <?php
-    session_start();
-    $_SESSION['$id']='admin';
     echo '<!doctype html>
         <html lang="en">
         <head>
@@ -42,7 +40,7 @@
                     <a class="nav-link" href="listProduit.php">Produit</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="gerePanierStandard.php">Panier standard</a>
+                    <a class="nav-link" href="managePanierStandard.php">Panier standard</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,9 +48,10 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="commandesCours.php">commandes en cours</a>
-                    <a class="dropdown-item" href="commandesFini.php">Commandes fini</a>
+                    <a class="dropdown-item" href="commandesStandard.php">Commandes standard</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="commandesRefuse.php">commandes refuse</a>
+                        <a class="dropdown-item" href="commandesFini.php">Commandes fini</a>
+                        <a class="dropdown-item" href="commandesRefuse.php">commandes refuse</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -86,6 +85,4 @@
         <script src="../js/bootstrap.min.js"></script>
     </body>
     </html>';
-    
-    echo '<script language="Javascript">document.location.replace("'.$_SERVER['SCRIPT_NAME']."?".$_SERVER['QUERY_STRING'].'"); </script>';
 ?>

@@ -19,23 +19,23 @@
       }
     </script>
     <div class="divstandard">
-      <input type="file" name="imageProd" accept="image/*" OnChange="showPreview(this)">
+      <input type="file" name="imageProd" accept="image/*" OnChange="showPreview(this)" required>
       <hr>
       <img id="imgAvatar" class="rounded mx-auto d-block" style="width: 500px;height:300px;margin-bottom: 50px;">
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
         <label>Nom Produit</label>
-        <input type="text" class="form-control" name="nomProduit">
+        <input type="text" class="form-control" name="nomProduit" required>
       </div>
       <div class="form-group col-md-6">
         <label>Prix en Dh</label>
-        <input type="number" min="0.01" class="form-control" name="prix" step="0.01">
+        <input type="number" min="0.01" class="form-control" name="prix" step="0.01" required>
       </div>
     </div>
     <div class="form-group">
       <label>quantité en stock</label>
-      <input type="number" min="0" class="form-control" name="qteStock">
+      <input type="number" min="0" class="form-control" name="qteStock" required>
     </div>
     <div class="form-row">
       <div class="form-group col-md-3">
@@ -44,7 +44,7 @@
       </div>
       <div class="form-group col-md-4">
         <label>Quantité dans panier standard</label>
-        <input type="number" min="0" class="form-control" name="quantitepanier">
+        <input type="number" min="0" class="form-control" name="quantitepanier" required>
       </div>
       <div class="form-group col-md-5">
         <label>Catégorie</label>
@@ -83,7 +83,7 @@
             die("Connection failed: " . $conn->connect_error);
         }
         $nomProd=$_POST['nomProduit'];
-        $sql = "select nomProdui from Produit where nomProdui='".$nomProd."'";
+        $sql = "select nomProduit from Produit where nomProduit='".$nomProd."'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0)
         {
@@ -107,15 +107,15 @@
               $panierStandard=1;
             }
             $quantitepanier=$_POST['quantitepanier'];
-            $sql = "INSERT INTO Produit (idCategorie,nomProdui,prix,quantiteStock,imageProduit,produtit_panier_standard,qte_ligne_panier_standard)VALUES ($idCat,'$nomProd',$prix,$qteStock,'$imageProduit',$panierStandard,$quantitepanier)";
+            $sql = "INSERT INTO Produit (idCategorie,nomProduit,prix,quantiteStock,imageProduit,produtit_panier_standard,qte_ligne_panier_standard)VALUES ($idCat,'$nomProd',$prix,$qteStock,'$imageProduit',$panierStandard,$quantitepanier)";
 
             if ($conn->query($sql) === TRUE) {
             echo "<script>alert(\"ajouter produit terminer avec succès\")</script>";
             } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error: ";
             }
             $conn->close();
-            header("Refresh:0");
+            echo '<script>javascript:history.go(-1);</script>';
         }
     }
 ?>

@@ -37,7 +37,10 @@ create table Commande
    idUser               int,
    dateCommande         datetime not null,
    PrixUT               float not null check(PrixUT>0),
-   etat_commande        varchar(254) check(etat_commande in('terminer','en attente','refusser')),
+   etat_commande        varchar(254) check(etat_commande in('termine','en attente','refuse')) not null,
+   is_standard			bool not null,
+   adresse				varchar(254) not null,
+   telephone			varchar(254) not null,
    primary key (idCommande)
 );
 
@@ -70,12 +73,12 @@ create table Produit
 (
    idProduit            int not null auto_increment,
    idCategorie          int,
-   nomProdui            varchar(254) not null unique,
+   nomProduit           varchar(254) not null unique,
    prix                 float not null check(prix>0),
    quantiteStock        int not null check(quantiteStock>=0),
    imageProduit         longblob not null,
-   produtit_panier_standard bool default false,
-   qte_ligne_panier_standard int default 0,
+   produtit_panier_standard bool default false not null,
+   qte_ligne_panier_standard int default 0 not null,
    primary key (idProduit)
 );
 
@@ -89,7 +92,7 @@ create table Users
    prenom               varchar(254) not null,
    email                varchar(254) not null unique,
    password_user        varchar(254) not null,
-   type_user            varchar(254) check(type_user in('admin','client')),
+   type_user            varchar(254) check(type_user in('admin','client')) not null,
    primary key (idUser)
 );
 

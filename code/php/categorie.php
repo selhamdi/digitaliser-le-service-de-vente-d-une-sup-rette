@@ -79,7 +79,7 @@
             echo "Error";
             }
             $conn->close();
-            header("Refresh:0");
+            echo '<script>javascript:history.go(-1);</script>';
         }
     }
 ?>
