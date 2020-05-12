@@ -37,8 +37,8 @@ create table Commande
    idUser               int,
    dateCommande         datetime not null,
    PrixUT               float not null check(PrixUT>0),
-   etat_commande        varchar(254) check(etat_commande in('termine','en attente','refuse')) not null,
-   is_standard			bool not null,
+   etat_commande        varchar(254) check(etat_commande in('termine','en attente','refuse')),
+   is_standard			TINYINT(1) not null,
    adresse				varchar(254) not null,
    telephone			varchar(254) not null,
    primary key (idCommande)
@@ -92,7 +92,7 @@ create table Users
    prenom               varchar(254) not null,
    email                varchar(254) not null unique,
    password_user        varchar(254) not null,
-   type_user            varchar(254) check(type_user in('admin','client')) not null,
+   type_user            varchar(254) check(type_user in('admin','client')),
    primary key (idUser)
 );
 
