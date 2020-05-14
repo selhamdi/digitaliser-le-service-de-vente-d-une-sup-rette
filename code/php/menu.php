@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    $_SESSION['$id']='admin';
     echo '<!doctype html>
         <html lang="en">
         <head>

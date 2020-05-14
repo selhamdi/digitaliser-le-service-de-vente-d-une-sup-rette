@@ -26,12 +26,12 @@
                     </div>
                     </div>';  
                 }
-        echo '</div>
-        <a href="addProduit.php"><button type="button" class="btn btn-light btn-lg">Ajouter Produit</button></a>';
+        echo '</div>';
         
     } 
     else {
-    echo '<p class="text-center font-weight-bolder">Aucun Produit</p>';
+    echo '<p class="text-center font-weight-bolder">Aucun Produit</p>
+    <a href="addProduit.php"><button type="button" class="btn btn-light btn-lg">Ajouter Produit</button></a>';
     }
     $conn->close();
     echo '</div>';

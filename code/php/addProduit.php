@@ -87,7 +87,7 @@
         $result = $conn->query($sql);
         if ($result->num_rows > 0)
         {
-            echo "<script>alert(\"nom de catégorie est deja exist\")</script>";
+            echo "<script>alert(\"nom de produit est deja exist\")</script>";
             $conn->close();
         }
         else
