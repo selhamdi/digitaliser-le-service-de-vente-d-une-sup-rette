@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $_SESSION['$id']='admin';
+    // $_SESSION['$id']='Client';
     echo '<!doctype html>
         <html lang="en">
         <head>
@@ -9,6 +9,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <link rel="stylesheet" href="../css/bootstrap.min.css">
             <link rel="stylesheet" href="../css/style.css">
+            <link rel="stylesheet" href="../css/inscrire.css">
             <title>T9adyti</title>
         </head>
         <body>
@@ -21,8 +22,8 @@
                     <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="./">Accueil</a>
-                    </li>';
-    if(!isset($_SESSION))
+                    </li>';            
+    if($_SESSION == null)
     {
         echo '<li class="nav-item">
                 <a class="nav-link" href="produit.php">Produit</a>
@@ -30,10 +31,8 @@
             <li class="nav-item">
                 <a class="nav-link" href="inscription.php">Inscription/connection</a>
             </li>';
-    }
-    else
-    {
-        if($_SESSION['$id']=='admin')
+    } 
+      if(isset($_SESSION['admin']))
         {
             echo '<li class="nav-item">
                     <a class="nav-link" href="categorie.php">Categorie</a>
@@ -59,8 +58,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php">Déconnexion</a>
                 </li>';
-        }
-        else
+        } 
+  if (isset($_SESSION['Client']))
         {
             echo '<li class="nav-item">
                 <a class="nav-link" href="produit.php">Produit</a>
@@ -78,13 +77,15 @@
                 <a class="nav-link" href="logout.php">Déconnexion</a>
             </li>';
         }
-    }
-    echo '      </ul>
-            </div>
+    
+
+    echo ' </ul>
+        </div>
         </nav>
         <script src="../js/jquery-3.4.1.slim.min.js"></script>
         <script src="../js/popper.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
     </body>
     </html>';
+
 ?>

@@ -1,7 +1,5 @@
 <?php 
-include('menu.php');
 include('connexion.php');
-
 // Create connection
 $conn = new mysqli("localhost", "root", "", "vente");  
 if ($conn->connect_error) {
@@ -18,7 +16,7 @@ $Confirm= $_POST['ConfirmPwd'];
     if($Nom&&$Prenom&&$Email&&$Password&&$Confirm)
     {
         if($Password==$Confirm) {
-            $Password = md5($Password);
+            // $Password = md5($Password);
             $reg = "SELECT * FROM users WHERE nom='$Nom' AND prenom='$Prenom'";
             $res = mysqli_query($conn, $reg);
             $rows = mysqli_num_rows($res);
@@ -81,4 +79,3 @@ $Confirm= $_POST['ConfirmPwd'];
 			</div>
 		</div>
 	</div>
-

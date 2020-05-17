@@ -1,4 +1,5 @@
 <?php
+include('menu.php');
 // Create connection
 $conn = new mysqli("localhost", "root", "", "vente");  
 if ($conn->connect_error) {
@@ -8,17 +9,26 @@ if ($conn->connect_error) {
 if(isset($_POST['login']))
 {
 
-$Email = $_POST['Email'];
-$Password= $_POST['Pwd'];
+  $Email = $_POST['Email'];
+  $Password= $_POST['Pwd'];
         if($Email&&$Password) {
-            $Password = md5($Password);
+            // $Password = md5($Password);
             $reg = "SELECT * FROM users WHERE email='$Email' AND password_user='$Password'";
             $res = mysqli_query($conn, $reg);
             $rows = mysqli_num_rows($res);
-          if($rows==1){
-            header('Location:/brief/php') ;
+            $chek = mysqli_fetch_array($res);
+          if($rows>0 && $chek['type_user']=='admin'){
+            $adm = $chek['type_user'];
+            $_SESSION['admin']=$adm;
+            header('Location:/brief/php/');
+           } else
+              if($rows>0 && $chek['type_user']=='Client') {
+              $clt = $chek['type_user'];
+              $_SESSION['Client']=$clt;
+              header('Location:/brief/php/');
           }else echo '<script>alert("Email ou mot de passe est incorret")</script>';  
-    }else echo '<script>alert("Svp Remplir tous les champs !!")</script>';
-}   
+     }else echo '<script>alert("Svp Remplir tous les champs !!")</script>';
+
+}     
 
 ?>
