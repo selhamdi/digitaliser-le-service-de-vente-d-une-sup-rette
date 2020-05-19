@@ -33,7 +33,7 @@ body {
     margin-top: -20px;
 }
 #main {
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        box-shadow: 0 14px 28px rgba(51, 183, 204, 1), 0 10px 10px rgba(0, 0, 0, 0.22);
      height: 345px;
      margin: 0 auto;
      max-width: 400px;
@@ -42,7 +42,7 @@ body {
      padding-top: 1pc;	
 }
 #main2 {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 14px 28px rgba(51, 183, 204, 1), 0 10px 10px rgba(0, 0, 0, 0.22);
     height: 200px;
     margin: 0 auto;
     max-width: 400px;
@@ -53,4 +53,14 @@ body {
 .border {
     border: 3px solid #17a2b8!important;
     border-radius: 25px;
+    height: 100px;
 }
+
+.ml3 {
+    font-weight: 600;
+    font-size: 2.5em;
+    text-align: center;
+    color: #17a2b8;
+    padding-top: 1pc;
+}
+

@@ -2,6 +2,11 @@
   include('menu.php');
   
   echo '
+  <style>
+    body {
+      background : #343a40;
+    }
+  </style>
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
    <div class="carousel-inner">
      <div class="carousel-item active">

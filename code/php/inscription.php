@@ -23,8 +23,8 @@ $Confirm= $_POST['ConfirmPwd'];
             $rows = mysqli_num_rows($res);
             if($rows==0) {
             $req = "INSERT INTO users (nom, prenom, email, password_user, type_user) VALUES ('$Nom', '$Prenom', '$Email', '$Password', 'Client')";
-            $res = mysqli_query($conn, $req);
-			die('<script>alert("Inscription Bien fait !!")</script>');
+			$res = mysqli_query($conn, $req);
+			echo '<script>alert("Inscription Bien fait !!")</script>';
             }else echo '<script>alert("ce utilisateur est déjà inscrit")</script>';
         }else echo '<script>alert("le mot de passe est incorrect")</script>';
     }else echo '<script>alert("Svp Remplir tous les champs !!")</script>';
@@ -45,7 +45,7 @@ include('footer.php');
 	<div class="container-fluid">
 		<div class="container">
 			 <div class="border">
-				<h2 class="text-center" id="title">Inscription/Connexion</h2>
+			 <h1 class="ml3">Inscription & Connexion</h1>
 			 </div>
 			<div class="row">
 				<div id="main" class="col-md-5">
@@ -96,3 +96,6 @@ include('footer.php');
 			</div>
 		</div>
 	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+	<script src="../js/animation.js"></script>
