@@ -1,7 +1,10 @@
 /* sign in FORM */
 
 body {
-    margin-top: 10%;
+    margin-top: 3%;
+    background-image: url(https://image.freepik.com/photos-gratuite/chariot-magasinage-jouets-paquets-colores_23-2147955541.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .container-fluid {
@@ -9,7 +12,8 @@ body {
 }
 
 .container {
-    background-color:white; 
+    margin-left: 10px;
+    margin-top: 65px;
 }
 
 .row {
@@ -18,4 +22,35 @@ body {
 
 #title {
     font-family: sans-serif;
+    color: #17a2b8;
+    font-weight: 900;
+}
+
+.vl {
+    border-left: 5px solid #17a2b8;
+    height: 380px;
+    margin-left: 50%;
+    margin-top: -20px;
+}
+#main {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+     height: 345px;
+     margin: 0 auto;
+     max-width: 400px;
+     overflow: hidden;
+     position: relative;
+     padding-top: 1pc;	
+}
+#main2 {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    height: 200px;
+    margin: 0 auto;
+    max-width: 400px;
+    overflow: hidden;
+    position: relative;
+    padding-top: 1pc;
+}
+.border {
+    border: 3px solid #17a2b8!important;
+    border-radius: 25px;
 }

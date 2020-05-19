@@ -24,18 +24,32 @@ $Confirm= $_POST['ConfirmPwd'];
             if($rows==0) {
             $req = "INSERT INTO users (nom, prenom, email, password_user, type_user) VALUES ('$Nom', '$Prenom', '$Email', '$Password', 'Client')";
             $res = mysqli_query($conn, $req);
-            die('<script>alert("Inscription Bien fait !!")</script>');
+			die('<script>alert("Inscription Bien fait !!")</script>');
             }else echo '<script>alert("ce utilisateur est déjà inscrit")</script>';
         }else echo '<script>alert("le mot de passe est incorrect")</script>';
     }else echo '<script>alert("Svp Remplir tous les champs !!")</script>';
 }
+
+include('footer.php');
 ?>
+	<!doctype html>
+        <html lang="en">
+        <head>
+            <!-- Required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <link rel="stylesheet" href="../css/bootstrap.min.css">
+            <link rel="stylesheet" href="../css/inscrire.css">
+            <title>Shopping</title>
+        </head>
 	<div class="container-fluid">
 		<div class="container">
-			<h2 class="text-center" id="title">Inscription/Connexion</h2>
+			 <div class="border">
+				<h2 class="text-center" id="title">Inscription/Connexion</h2>
+			 </div>
 			<div class="row">
 				<div id="main" class="col-md-5">
- 					<form role="form" method="post" action="inscription.php">
+ 					<form role="form" method="post" action="">
 						<fieldset>							
  							<div class="form-group">
                                 <input type="text" id="first_name" class="form-control input-lg" name="Nom" placeholder="votre nom...">
@@ -53,41 +67,13 @@ $Confirm= $_POST['ConfirmPwd'];
 								<input type="password" id="password_confirmation" class="form-control input-lg" name="ConfirmPwd" placeholder="Confirmer le Mot de passe...">
 							</div>
  							<div>
-                                <input type="submit" value="S'inscrire" class="btn btn-info btn-block" name="submit">
+                              <input type="submit" value="S'inscrire" class="btn btn-info btn-block" name="submit">
  							</div>
 						</fieldset>
 					</form>
 				</div>
 				
 				<div class="col-md-2">
-					<style>
-						
-						.vl {
-    						border-left: 5px solid #17a2b8;
-    						height: 350px;
-    						margin-left: 50%;
-							margin-top: -20px;
-						}
-						#main {
-   							 box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    						 height: 345px;
-    						 margin: 0 auto;
-    						 max-width: 400px;
-    						 overflow: hidden;
-    						 position: relative;
-							 padding-top: 1pc;	
-						}
-						#main2 {
-    						box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    						height: 200px;
-    						margin: 0 auto;
-    						max-width: 400px;
-    						overflow: hidden;
-    						position: relative;
-    						padding-top: 1pc;
-						}
-
-					</style>
 					<div class="vl">
 					<!-------null------>
 					</div>
