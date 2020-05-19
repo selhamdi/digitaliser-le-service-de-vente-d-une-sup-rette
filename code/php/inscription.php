@@ -1,4 +1,5 @@
 <?php 
+include('menu.php');
 include('connexion.php');
 // Create connection
 $conn = new mysqli("localhost", "root", "", "vente");  
@@ -33,7 +34,7 @@ $Confirm= $_POST['ConfirmPwd'];
 		<div class="container">
 			<h2 class="text-center" id="title">Inscription/Connexion</h2>
 			<div class="row">
-				<div class="col-md-5">
+				<div id="main" class="col-md-5">
  					<form role="form" method="post" action="inscription.php">
 						<fieldset>							
  							<div class="form-group">
@@ -59,9 +60,39 @@ $Confirm= $_POST['ConfirmPwd'];
 				</div>
 				
 				<div class="col-md-2">
+					<style>
+						
+						.vl {
+    						border-left: 5px solid #17a2b8;
+    						height: 350px;
+    						margin-left: 50%;
+							margin-top: -20px;
+						}
+						#main {
+   							 box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    						 height: 345px;
+    						 margin: 0 auto;
+    						 max-width: 400px;
+    						 overflow: hidden;
+    						 position: relative;
+							 padding-top: 1pc;	
+						}
+						#main2 {
+    						box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    						height: 200px;
+    						margin: 0 auto;
+    						max-width: 400px;
+    						overflow: hidden;
+    						position: relative;
+    						padding-top: 1pc;
+						}
+
+					</style>
+					<div class="vl">
 					<!-------null------>
+					</div>
                 </div>
-                <div class="col-md-5">
+                <div id="main2" class="col-md-5">
  				 		<form role="form" method="POST" action="">
 						<fieldset>								
 							<div class="form-group">

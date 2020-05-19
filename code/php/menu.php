@@ -10,7 +10,7 @@
             <link rel="stylesheet" href="../css/bootstrap.min.css">
             <link rel="stylesheet" href="../css/style.css">
             <link rel="stylesheet" href="../css/inscrire.css">
-            <title>T9adyti</title>
+            <title>Shopping</title>
         </head>
         <body>
             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">

@@ -1,5 +1,4 @@
 <?php
-include('menu.php');
 // Create connection
 $conn = new mysqli("localhost", "root", "", "vente");  
 if ($conn->connect_error) {
@@ -24,6 +23,7 @@ if(isset($_POST['login']))
            } else
               if($rows>0 && $chek['type_user']=='Client') {
               $clt = $chek['type_user'];
+              $_SESSION['id']=$check['idUser'];
               $_SESSION['Client']=$clt;
               header('Location:/brief/php/');
           }else echo '<script>alert("Email ou mot de passe est incorret")</script>';  
