@@ -14,6 +14,7 @@ $Prenom = $_POST['Prenom'];
 $Email = $_POST['Email'];
 $Password= $_POST['Pwd'];
 $Confirm= $_POST['ConfirmPwd'];
+
     if($Nom&&$Prenom&&$Email&&$Password&&$Confirm)
     {
         if($Password==$Confirm) {
@@ -30,20 +31,21 @@ $Confirm= $_POST['ConfirmPwd'];
     }else echo '<script>alert("Svp Remplir tous les champs !!")</script>';
 }
 
-include('footer.php');
 ?>
-	<!doctype html>
+
+<!doctype html>
         <html lang="en">
         <head>
             <!-- Required meta tags -->
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <link rel="stylesheet" href="../css/bootstrap.min.css">
-            <link rel="stylesheet" href="../css/inscrire.css">
+			<link rel="stylesheet" href="../css/inscrire.css">
             <title>Shopping</title>
-        </head>
+		</head>
+	<body>
 	<div class="container-fluid">
-		<div class="container">
+		<div class="container" id="cnt">
 			 <div class="border">
 			 <h1 class="ml3">Inscription & Connexion</h1>
 			 </div>
@@ -96,6 +98,11 @@ include('footer.php');
 			</div>
 		</div>
 	</div>
-
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 	<script src="../js/animation.js"></script>
+	</body>
+	</html>
+	
+<?php	
+	include('footer.php');
+?>

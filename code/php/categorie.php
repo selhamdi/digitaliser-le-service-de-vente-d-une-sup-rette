@@ -5,7 +5,7 @@
         <div class="form-row align-items-center divstandard">
             <div class="col-auto">
             <label class="sr-only" for="inlineFormInput">Name</label>
-            <input type="text" class="form-control mb-2" id="inlineFormInput" name="nomCat" placeholder="Nome catégorie" required>
+            <input type="text" class="form-control mb-2" id="inlineFormInput" name="nomCat" placeholder="Nome catégorie">
             </div>
             <div class="col-auto">
                 <button type="submit" name="addCategrie" class="btn btn-light btn-lg">ajouter</button>
