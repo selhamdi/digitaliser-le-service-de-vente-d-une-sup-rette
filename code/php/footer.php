@@ -17,12 +17,12 @@
          <li>Company</li>
        </ul>
        <ul class="list-unstyled socila-list">
-         <li><img src="http://placehold.it/48x48" alt="" /></li>
-         <li><img src="http://placehold.it/48x48" alt="" /></li>
-         <li><img src="http://placehold.it/48x48" alt="" /></li>
-         <li><img src="http://placehold.it/48x48" alt="" /></li>
-         <li><img src="http://placehold.it/48x48" alt="" /></li>
-         <li><img src="http://placehold.it/48x48" alt="" /></li>
+         <li><img id="image" src="../images/Facebook.png" alt="" /></li>
+         <li><img id="image" src="../images/Youtube.png" alt="" /></li>
+         <li><img id="image" src="../images/Twitter.png" alt="" /></li>
+         <li><img id="image" src="../images/Pinterest.png" alt="" /></li>
+         <li><img id="image" src="../images/store.png" alt="" /></li>
+         <li><img id="image" src="../images/bloger.png" alt="" /></li>
        </ul>
      </div>
      
@@ -30,7 +30,7 @@
        <h3>latest Articles</h3>
        <div class="media">
          <a href="#" class="pull-left">
-           <img src="http://placehold.it/64x64" alt="" class="media-object" />
+           <img id="contact" src="https://image.freepik.com/vecteurs-libre/profil-avatar-homme-icone-ronde_24640-14044.jpg" alt="" class="media-object" />
          </a>
          <div class="media-body">
            <h4 class="media-heading">Programming</h4>
@@ -40,7 +40,7 @@
        
        <div class="media">
          <a href="#" class="pull-left">
-           <img src="http://placehold.it/64x64" alt="" class="media-object" />
+           <img id="contact" src="https://image.freepik.com/vecteurs-libre/profil-avatar-homme-icone-ronde_24640-14044.jpg" alt="" class="media-object" />
          </a>
          <div class="media-body">
            <h4 class="media-heading">Coding</h4>
@@ -50,7 +50,7 @@
        
        <div class="media">
          <a href="#" class="pull-left">
-           <img src="http://placehold.it/64x64" alt="" class="media-object" />
+           <img id="contact" src="https://image.freepik.com/vecteurs-libre/profil-avatar-homme-icone-ronde_24640-14044.jpg" alt="" class="media-object" />
          </a>
          <div class="media-body">
            <h4 class="media-heading">Web Sesign</h4>
@@ -62,16 +62,16 @@
      
      <div class="col-lg-4">
        <h3>Our Work</h3>
-       <img class="img-thumbnail" src="http://placehold.it/150x100" alt="" />
-       <img class="img-thumbnail" src="http://placehold.it/150x100" alt="" />
-       <img class="img-thumbnail" src="http://placehold.it/150x100" alt="" />
-       <img class="img-thumbnail" src="http://placehold.it/150x100" alt="" />
+       <img class="img-thumbnail" src="https://1.bp.blogspot.com/-_U8vlciRCDY/WgXSPCPH2WI/AAAAAAAAANo/wghU-3c174QnrrzEDniQx87XRqTSN1OBQCLcBGAs/s640/How-to-save-money-while-shopping-online-4-2-iloveimg-compressed.jpg" alt="" />
+       <img class="img-thumbnail" src="https://cdn.panierdachat.com/wp-content/uploads/2018/10/instagram-shopping-comment-vendre-en-ligne-sur-instagram-1.jpg" alt="" />
+       <img class="img-thumbnail" src="https://www.notretemps.com/cache/com_zoo_images/1a/achatinternet_439bea9c9a59aee35ff2f6108cb03418.jpg" alt="" />
+       <img class="img-thumbnail" src="https://lh3.googleusercontent.com/proxy/SRTk_wmmTpiFxxCoquoUvsDUI0ShBtynrw-0wHB9SZb44PBGyHZuSWD-UUnJPReJfhK95fHnErboyf3ZAIMKBP__qOEK72hvaL8z36MlB6dZvH8RMzaQipmiOjSH83Vg2n9NE-KB6wyKTu_XEk8lsAU58g" alt="" />
      </div>
      
    </div>
  </div>
  <div class="copyright text-center">
-   Copyright &copy; 2017 <span>Your Template Name</span>
+   Copyright &copy; 2020 <span>Shopping</span>
  </div>
 </footer>'
 
