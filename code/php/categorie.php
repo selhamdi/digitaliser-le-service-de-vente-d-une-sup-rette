@@ -8,7 +8,7 @@
             <input type="text" class="form-control mb-2" id="inlineFormInput" name="nomCat" placeholder="Nome catégorie">
             </div>
             <div class="col-auto">
-                <button type="submit" name="addCategrie" class="btn btn-light btn-lg">ajouter</button>
+                <button type="submit" name="addCategrie" class="btn btn-primary btn-lg">ajouter</button>
             </div>
         </div>
     </form>';
@@ -25,7 +25,8 @@
 
     if ($result->num_rows > 0) {
         // output data of each row
-        echo '<table class="table table-striped divstandard">
+        echo '<div class="form-row align-items-center divstandard">
+        <table class="table table-striped ">
             <thead>
             <tr>
                 <th scope="col">id catégorie</th>
@@ -40,7 +41,7 @@
                 </tr>';
         }
         echo "</tbody>
-        </table>";
+        </table></div>";
     } 
     else {
     echo '<p class="text-center font-weight-bolder">Aucun catégorie</p>';
