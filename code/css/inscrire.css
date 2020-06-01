@@ -1,15 +1,13 @@
 /* sign in FORM */
-
 body {
-    margin-top: 5%;
-    background-image: url(https://image.freepik.com/photos-gratuite/chariot-magasinage-jouets-paquets-colores_23-2147955541.jpg);
+    background-image: url(https://thumbs.dreamstime.com/b/famille-avec-des-paniers-se-tenant-au-studio-33569755.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-position: right;
+    background-position-y: top;
 }
-
 .container-fluid {
     padding:50px;
-    height: 75vh;
+    height: 85vh;
 } 
 
 div#cnt {
@@ -18,7 +16,7 @@ div#cnt {
 }
 
 .row {
-    margin-top: 10%;
+    margin-top: 8%;
 }
 
 #title {
@@ -34,8 +32,8 @@ div#cnt {
     margin-top: -20px;
 }
 #main {
-        box-shadow: 0 14px 28px rgba(51, 183, 204, 1), 0 10px 10px rgba(0, 0, 0, 0.22);
-     height: 345px;
+     box-shadow: 0 14px 28px rgba(51, 183, 204, 1), 0 10px 10px rgba(0, 0, 0, 0.22);
+     height: 380px;
      margin: 0 auto;
      max-width: 400px;
      overflow: hidden;
@@ -63,4 +61,5 @@ div#cnt {
     text-align: center;
     color: #17a2b8;
     padding-top: 1pc;
+    margin-top: 12px;
 } 
