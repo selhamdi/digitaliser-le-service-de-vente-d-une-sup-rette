@@ -1,82 +1,55 @@
 <?php
-
-// print_r($_SESSION);
-include('menu.php');
-// session_destroy();
-
-// Create connection
-$conn = new mysqli("localhost", "root", "", "vente");  
-if ($conn->connect_error) {
+    include('menu.php');
+    include('header.php');
+    echo '<div class="divstandard">';
+    $conn = new mysqli("localhost", "root", "", "vente");
+    // Check connection
+    if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
-
-?>
-<style>
-    .row {
-    margin-top: 6%;
-    margin-left: 2%;
-    text-align: center;
     }
-table{
- border-collapse:collapse;
- width:40%;
- }
-th, td {
- border:1px solid black;
- width:20%;
- }
-td {
- text-align:center;
- }
- button.btn.btn-light.btn-lg {
-    margin-top: 180%;
-}
-.tableTotal {
-    border-collapse: collapse;
-    width: 40%;
-    margin-top: 10%;
-    margin-left: -40%;
-}
-</style>
-<div class="row">
-    <table>
 
-    <br>
-                <tr>
-        <th>produit</th>
-        <th>prix</th>
-        <th>total</th>
-        <th>qte</th>
-        </tr>
-        <tr>
-        <?php foreach($_SESSION as $key => $value):?>
-            <?php if(substr($key,0,7) == "produit"):
-            ?>
-
-        <td><?php echo $value['nom']?></td>
-        <td><?php echo $value['prix']?>DH</td>
-        <td><?php echo $value['total']?></td>
-        <td><?php echo $value['qte']?></td>
-        </tr>
-            <?php endif;?>
-            <?php endforeach;?>     
-    </table>
-    <br><br>
-    <div class="tableTotal">  
-    <table>
-        <tr>
-            <th>produit</th>
-            <th>Somme total</th>
-        </tr>
-        <th>
-            <td><?php echo $_SESSION['cont']?></td>
-            <td><?php echo $_SESSION['totaux']?>DH</td>
-        </th>
-    </table>
-    </div>
- 
-   <div><a class="button" href="commande.php"><button type="button" name="addtodb" class="btn btn-light btn-lg">Payer</button></a></div>
-</div>
-<?php
-include("foter.php");
+    $sql = "SELECT * FROM `produit` ORDER BY `produit`.`idProduit` ASC ";
+    $result = mysqli_query($conn, $sql);  
+                  
+    if ($result->num_rows > 0) {
+        echo '<div class="row">';
+        while($row = mysqli_fetch_array($result))  
+                {  
+                    echo "<div class='col-md-3'>
+            
+                    <div class='card'> 
+                    <form method='post' action=''>
+                      <img src='data:image/jpeg;base64,".base64_encode($row['imageProduit'] )."' class='card-img-top' height='200' />
+                    
+                            <div class='card-body'>
+                                <h5 class='card-title'>".$row['nomProduit']."</h5>
+                                <p class='card-text text-right'>".$row['prix']." Dh</p>
+                                
+                                Qte:
+                                <select name='qte'>
+                                    <option value='1'>1</option>
+                                    <option value='2'>2</option>
+                                    <option value='3'>3</option>
+                                    <option value='4'>1</option>
+                                    <option value='5'>2</option>
+                                    <option value='6'>3</option>
+                                </select> <br>
+                                <input type='submit' name='remove' style='margin-top:5px;' class='btn btn-success' value='retirer' />
+                            </div>
+                            
+                            </form>
+                             
+                            </div>
+                            </div>';";
+                }  
+        echo "</div>
+        <a href='addProduit.php'><button type='button' class='btn btn-light btn-lg'>Reserver</button></a>";
+        
+    } 
+    else {
+    echo '<p class="text-center font-weight-bolder">Aucun Produit</p>';
+    }
+    $conn->close();
+    echo '</div>';
+    include('footer.php');
 ?>
