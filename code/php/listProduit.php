@@ -26,13 +26,14 @@
                     </div>
                     </div>';  
                 }
-        echo '</div>';
+        echo '</div>
+        <a href="addProduit.php"><button type="button" class="btn btn-light btn-lg">Ajouter Produit</button></a>';
         
     } 
     else {
     echo '<p class="text-center font-weight-bolder">Aucun Produit</p>';
     }
     $conn->close();
-    echo '<a href="addProduit.php"><button type="button" class="btn btn-light btn-lg">Ajouter Produit</button></a></div>';
+    echo '</div>';
     include('footer.php');
 ?>
