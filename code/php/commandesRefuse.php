@@ -1,5 +1,6 @@
 <?php
     include('menu.php');
+    include('header.php');
 
     // Create connection
     $conn = new mysqli("localhost", "root", "", "vente");

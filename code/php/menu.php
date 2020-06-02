@@ -6,6 +6,7 @@
             <!-- Required meta tags -->
             <meta charset="utf-8">
             <link rel="stylesheet" href="../css/style.css">
+            <link rel="stylesheet" href="../css/inscrire.css">
             <link rel="stylesheet" href="../css/footer.css">
             <link rel="stylesheet" href="../css/bootstrap.min.css">
             <title>T9adyti</title>

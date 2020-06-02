@@ -89,7 +89,8 @@ CREATE TABLE `produit` (
   `idProduit` int(11) NOT NULL,
   `idCategorie` int(11) DEFAULT NULL,
   `nomProduit` varchar(254) NOT NULL,
-  `prix` float NOT NULL
+  `prix` float NOT NULL,
+  is_standard			TINYINT(1) not null,
 ) ;
 
 --

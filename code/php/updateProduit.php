@@ -1,5 +1,6 @@
 <?php
     include('menu.php');
+    include('header.php');
     if(isset($_GET["id"]) && !empty( $_GET['id'] ))
     {
         $conn = new mysqli("localhost", "root", "", "vente");
@@ -77,8 +78,8 @@
                         echo '</select>
                     </div>
                     </div>
-                        <button type="submit" class="btn btn-light btn-lg" name="updateProduit">Modifier</button>
-                        <input type="button" value="Annuler" onClick="javascript:history.go(-1)" class="btn btn-light btn-lg"/>
+                        <button type="submit" class="btn btn-info btn-lg" name="updateProduit">Modifier</button>
+                        <input type="button" value="Annuler" onClick="javascript:history.go(-1)" class="btn btn-info btn-lg"/>
                     </div>
                 </form>';  
                 }

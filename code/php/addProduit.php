@@ -1,5 +1,6 @@
 <?php
     include('menu.php');
+    include('header.php');
     echo '<form method="POST" action="" enctype="multipart/form-data"><div class="divstandard">
     <script language="JavaScript">
       function showPreview(ele)
@@ -70,7 +71,7 @@
         echo '</select>
       </div>
     </div>
-        <button type="submit" class="btn btn-light btn-lg" name="addProduit">ajouter</button>
+        <button type="submit" class="btn btn-info btn-lg" name="addProduit">ajouter</button>
     </div>
   </form>';
   include('footer.php');

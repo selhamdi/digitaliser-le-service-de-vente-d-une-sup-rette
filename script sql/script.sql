@@ -39,8 +39,6 @@ create table Commande
    PrixUT               float not null check(PrixUT>0),
    etat_commande        varchar(254) check(etat_commande in('termine','en attente','refuse')),
    is_standard			TINYINT(1) not null,
-   adresse				varchar(254) not null,
-   telephone			varchar(254) not null,
    primary key (idCommande)
 );
 

@@ -1,5 +1,6 @@
 <?php
     include('menu.php');
+    include('header.php');
 
     // Create connection
     $conn = new mysqli("localhost", "root", "", "vente");
@@ -40,11 +41,8 @@
     echo "<div class='divstandard'><p class='text-center font-weight-bolder'>Aucun commande</p></div>";
     }
     $conn->close();
+    include('footer.php');
     echo '<script>$("tr[data-href]").on("click", function() {
         document.location = $(this).data("href");
     });</script>';
 ?>
-
-<?php 
-       include('foter.php');
- ?>      

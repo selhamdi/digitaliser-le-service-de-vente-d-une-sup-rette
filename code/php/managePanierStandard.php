@@ -1,5 +1,6 @@
 <?php
     include('menu.php');
+    include('header.php');
     echo '<div class="divstandard">';
     $conn = new mysqli("localhost", "root", "", "vente");
     // Check connection
@@ -20,7 +21,7 @@
                     <div class="card-body">
                         <h5 class="card-title">'.$row['nomProduit'].'</h5>
                         <p class="card-text text-right">'.$row['prix'].' Dh</p>
-                        <a href="updateProduit.php?id='.$row["idProduit"].'"><button type="button" name="detailProduit" class="btn btn-light btn-lg">Détails</button></a>
+                        <a href="updateProduit.php?id='.$row["idProduit"].'"><button type="button" name="detailProduit" class="btn btn-info btn-lg">Détails</button></a>
                     </div>
                     </div>
                     </div>';  

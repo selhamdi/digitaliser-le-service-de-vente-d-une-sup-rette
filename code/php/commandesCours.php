@@ -1,5 +1,6 @@
 <?php
     include('menu.php');
+    include('header.php');
 
     // Create connection
     $conn = new mysqli("localhost", "root", "", "vente");
@@ -32,8 +33,8 @@
                     <td>'. $row["nom"].'</td>
                     <td>'. $row["prenom"].'</td>
                     <td>'. $row["dateCommande"].'</td>
-                    <td><button type="submit" class="btn btn-light btn-lg" name="termine['. $row["idCommande"].']">terminé</button></td>
-                    <td><button type="submit" class="btn btn-light btn-lg" name="refuse['. $row["idCommande"].']">refusé</button></td>
+                    <td><button type="submit" class="btn btn-info btn-lg" name="termine['. $row["idCommande"].']">terminé</button></td>
+                    <td><button type="submit" class="btn btn-info btn-lg" name="refuse['. $row["idCommande"].']">refusé</button></td>
                     </form>
                 </tr>';
         }

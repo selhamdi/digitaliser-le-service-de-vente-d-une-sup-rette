@@ -36,7 +36,7 @@
     die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM `produit` ORDER BY `produit`.`idProduit` ASC ";
+    $sql = "SELECT * FROM `produit` where quantiteStock>0 ORDER BY `produit`.`idProduit` ASC ";
     $result = mysqli_query($conn, $sql);  
                   
     if ($result->num_rows > 0) {
@@ -49,7 +49,7 @@
                     <div class="card-body">
                         <h5 class="card-title">'.$row['nomProduit'].'</h5>
                         <p class="card-text text-right">'.$row['prix'].' Dh</p>
-                        <a href="panier.php?id='.$row["idProduit"].'"><button type="button" name="ajoutePanier" class="btn btn-light btn-lg">Ajouter au panier</button></a>
+                        <a href="panier.php?id='.$row["idProduit"].'"><button type="button" name="ajoutePanier" class="btn btn-info btn-lg">Ajouter au panier</button></a>
                     </div>
                     </div>
                     </div>';  
