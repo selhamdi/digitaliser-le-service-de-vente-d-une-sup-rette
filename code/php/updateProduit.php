@@ -1,6 +1,5 @@
 <?php
     include('menu.php');
-    include('header.php');
     if(isset($_GET["id"]) && !empty( $_GET['id'] ))
     {
         $conn = new mysqli("localhost", "root", "", "vente");

@@ -1,6 +1,5 @@
 <?php
     include('menu.php');
-    include('header.php');
     echo '<form method="POST" action="">
         <div class="form-row align-items-center divstandard">
             <div class="col-auto">
@@ -47,7 +46,6 @@
     echo '<p class="text-center font-weight-bolder">Aucun catégorie</p>';
     }
     $conn->close();
-    include('footer.php');
 
     if(isset($_POST['addCategrie']))
     {
@@ -84,3 +82,7 @@
         }
     }
 ?>
+
+<?php
+      include('footer.php');
+?>      

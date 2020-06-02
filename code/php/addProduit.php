@@ -1,6 +1,5 @@
 <?php
     include('menu.php');
-    include('header.php');
     echo '<form method="POST" action="" enctype="multipart/form-data"><div class="divstandard">
     <script language="JavaScript">
       function showPreview(ele)

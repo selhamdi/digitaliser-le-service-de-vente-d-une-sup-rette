@@ -1,6 +1,6 @@
 <?php
     include('menu.php');
-    include('header.php');
+    
     echo '<div class="divstandard">';
     if(isset($_GET["id"]) && !empty( $_GET['id'] ))
     {

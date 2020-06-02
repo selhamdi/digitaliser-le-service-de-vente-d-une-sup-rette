@@ -100,9 +100,9 @@ $Confirm= $_POST['ConfirmPwd'];
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 	<script src="../js/animation.js"></script>
+	<?php	
+	include('footer.php');
+	?>
 	</body>
 	</html>
 	
-<?php	
-	include('footer.php');
-?>

@@ -1,6 +1,5 @@
 <?php
     include('menu.php');
-    include('header.php');
     echo '<div class="divstandard">';
     $conn = new mysqli("localhost", "root", "", "vente");
     // Check connection
@@ -26,14 +25,13 @@
                     </div>
                     </div>';  
                 }
-        echo '</div>
-        <a href="addProduit.php"><button type="button" class="btn btn-light btn-lg">Ajouter Produit</button></a>';
+        echo '</div>';
         
     } 
     else {
     echo '<p class="text-center font-weight-bolder">Aucun Produit</p>';
     }
     $conn->close();
-    echo '</div>';
+    echo '<a href="addProduit.php"><button type="button" class="btn btn-light btn-lg">Ajouter Produit</button></a></div>';
     include('footer.php');
 ?>
