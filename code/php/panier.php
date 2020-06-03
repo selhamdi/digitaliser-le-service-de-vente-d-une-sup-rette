@@ -80,7 +80,7 @@ if(mysqli_num_rows($result) > 0) {?>
             ?>
             </div>
             <form method="post" action="">
-            <input type="submit" name="Reserver" style="margin-top:5px;" class="btn btn-info" value="Reserver" />
+            <input type="button" style="margin-top:5px;" class="btn btn-info" value="Reserver" onclick="affiche()"/>
                </form>
                      
                      
@@ -103,10 +103,11 @@ $date_time=date('y-m-d');
 
 
 if ( isset( $_POST['Reserver'] ) ) {
+        $telephone=$_POST["telephone"];
+        $adresse=$_POST["adresse"];
+        $query2="INSERT INTO commande(idUser, dateCommande, PrixUT, etat_commande, is_standard,telephone,adresse)
 
-        $query2="INSERT INTO commande(idUser, dateCommande, PrixUT, etat_commande, is_standard)
-
-        VALUES ( $id, '$date_time', $totale_price,'En Attente',0 )";
+        VALUES ( $id, '$date_time', $totale_price,'En Attente',0,'$telephone','$adresse' )";
         
         $Result_insert= mysqli_query($conn,$query2) ;
 
@@ -120,7 +121,6 @@ if ( isset( $_POST['Reserver'] ) ) {
             $result1 = $conn->query($sql);
         }
         echo "<script type='text/javascript'>alert('reservation terminer');window.location.href = 'index.php'</script>";
-        header('Location:index.php');
 }
 if ( isset( $_POST['remove'] ) ) {
     $remove=array_keys($_POST["remove"])[0];
@@ -137,5 +137,36 @@ if ( isset( $_POST['update'] ) ) {
 }
 $conn->close();
 include('footer.php');
-?>
 
+echo '<div class="blockresrev" id="reservpop"><div class="resrev">
+<form method="post" action="">
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-4 col-form-label">telephone</label>
+    <div class="col-sm-7">
+      <input type="tele" name="telephone" class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-4 col-form-label">adresse</label>
+    <div class="col-sm-7">
+      <input type="text" name="adresse" class="form-control">
+    </div>
+  </div>
+  
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-info btn-lg" name="Reserver">Reserver</button>
+      <button type="button" class="btn btn-secondary btn-lg" onclick="disable()">Annuler</button>
+    </div>
+  </div>
+</form>
+</div></div>';
+?>
+<script>
+    function affiche() {
+        document.getElementById('reservpop').style.display="inline";
+    }
+    function disable() {
+        document.getElementById('reservpop').style.display="none";
+    }
+</script>

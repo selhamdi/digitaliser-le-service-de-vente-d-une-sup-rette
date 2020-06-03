@@ -9,7 +9,7 @@
     die("Connection failed: " . $conn->connect_error);
     }
     $id=$_SESSION['Client'];
-    $sql = "SELECT commande.idCommande,commande.dateCommande,commande.prixUT,commande.etat_commande FROM commande WHERE commande.idUser=$id ORDER BY commande.dateCommande ASC";
+    $sql = "SELECT commande.idCommande,commande.dateCommande,commande.prixUT,commande.etat_commande,commande.telephone,commande.adresse FROM commande WHERE commande.idUser=$id ORDER BY commande.dateCommande ASC";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -21,6 +21,8 @@
                 <th scope="col">date commande</th>
                 <th scope="col">prix</th>
                 <th scope="col">état</th>
+                <th scope="col">telephone</th>
+                <th scope="col">adresse</th>
             </tr>
             </thead>
             <tbody>';
@@ -31,6 +33,8 @@
                     <td>'. $row["dateCommande"].'</td>
                     <td>'. $row["prixUT"].'</td>
                     <td>'. $row["etat_commande"].'</td>
+                    <td>'. $row["telephone"].'</td>
+                    <td>'. $row["adresse"].'</td>
                     </form>
                 </tr>';
         }
