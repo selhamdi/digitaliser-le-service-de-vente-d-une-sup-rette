@@ -3,9 +3,16 @@
   
   echo '
   <style>
-    body {
-      background : #343a40;
+    #carouselExampleControls {
+      margin-top: 2%;
     }
+    .search {
+      margin-top: 2%;
+      margin-left: 30%;
+    }
+    #input {
+      width: 30%;
+    } 
   </style>
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
    <div class="carousel-inner">
@@ -28,6 +35,13 @@
      <span class="sr-only">Next</span>
    </a>
  </div>';
+
+ echo '<div class="search">
+ <form action="" method="post" class="form-inline my-2 my-lg-0">
+ <input  name="requete" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="input">
+ <button class="btn btn-light btn-lg" type="submit">Search</button>
+</form>
+</div>'; 
  
     echo '<div class="divstandard">';
     $conn = new mysqli("localhost", "root", "", "vente");
@@ -36,7 +50,33 @@
     die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM `produit` where quantiteStock>0 ORDER BY `produit`.`idProduit` ASC ";
+    if ( isset($_POST['requete']) ) 
+        $requete = htmlentities($conn->real_escape_string($_POST['requete']));
+        
+    if (!empty($requete)) {
+        $req = "SELECT * FROM produit WHERE nomProduit LIKE '%$requete%'"; 
+        $exec = $conn->query($req);                            
+// exécuter la requête
+        $nb_resultats = $exec->num_rows;              // compter les résultats
+
+      echo '<div class="row">';
+      while($donnees = mysqli_fetch_array($exec))  
+              {  
+                  echo '<div class="col-sm-4 cardProduit">
+                  <div class="card">
+                  <img src="data:image/jpeg;base64,'.base64_encode($donnees['imageProduit'] ).'" class="card-img-top" height="300"/>  
+                  <div class="card-body">
+                      <h5 class="card-title">'.$donnees['nomProduit'].'</h5>
+                      <p class="card-text text-right">'.$donnees['prix'].' Dh</p>
+                      <a href="add.php?idPro='.$donnees["idProduit"].'"><button type="button" name="ajoutePanier" class="btn btn-light btn-lg">Ajouter au panier</button></a>
+                  </div>
+                  </div>
+                  </div>';  
+              } // fin de la boucle
+      echo '</div>';
+ 
+  }  else {
+    $sql = "SELECT * FROM `produit` ORDER BY `produit`.`idProduit` ASC ";
     $result = mysqli_query($conn, $sql);  
                   
     if ($result->num_rows > 0) {
@@ -45,11 +85,11 @@
                 {  
                     echo '<div class="col-sm-4 cardProduit">
                     <div class="card">
-                    <img src="data:image/jpeg;base64,'.base64_encode($row['imageProduit'] ).'" class="card-img-top" height="200" />  
+                    <img src="data:image/jpeg;base64,'.base64_encode($row['imageProduit'] ).'" class="card-img-top" height="300"/>  
                     <div class="card-body">
                         <h5 class="card-title">'.$row['nomProduit'].'</h5>
                         <p class="card-text text-right">'.$row['prix'].' Dh</p>
-                        <a href="panier.php?id='.$row["idProduit"].'"><button type="button" name="ajoutePanier" class="btn btn-info btn-lg">Ajouter au panier</button></a>
+                        <a href="add.php?idPro='.$row["idProduit"].'"><button type="button" name="ajoutePanier" class="btn btn-light btn-lg">Ajouter au panier</button></a>
                     </div>
                     </div>
                     </div>';  
@@ -60,6 +100,7 @@
     else {
     echo '<p class="text-center font-weight-bolder">Aucun Produit</p>';
     }
+  } 
     $conn->close();
     echo '</div>';
     include('footer.php');
