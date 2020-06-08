@@ -22,8 +22,7 @@ if(isset($_POST['login']))
             header('Location:/code/php/');
            } else
               if($rows>0 && $chek['type_user']=='Client') {
-              $clt = $chek['type_user'];
-              $_SESSION['id']=$check['idUser'];
+              $clt = $chek['idUser'];
               $_SESSION['Client']=$clt;
               header('Location:/code/php/');
           }else echo '<script>alert("Email ou mot de passe est incorret")</script>';  

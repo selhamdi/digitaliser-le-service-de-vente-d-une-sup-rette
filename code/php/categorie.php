@@ -1,17 +1,18 @@
 <?php
     include('menu.php');
     include('header.php');
-    echo '<form method="POST" action="">
-        <div class="form-row align-items-center divstandard">
+    
+    echo '<div class="divstandard"><form method="POST" action="">
+        <div class="form-row align-items-center ">
             <div class="col-auto">
             <label class="sr-only" for="inlineFormInput">Name</label>
             <input type="text" class="form-control mb-2" id="inlineFormInput" name="nomCat" placeholder="Nome catégorie">
             </div>
             <div class="col-auto">
-                <button type="submit" name="addCategrie" class="btn btn-primary btn-lg">ajouter</button>
+                <button type="submit" name="addCategrie" class="btn btn-info btn-lg">ajouter</button>
             </div>
         </div>
-    </form>';
+    </form></div>';
 
     // Create connection
     $conn = new mysqli("localhost", "root", "", "vente");
@@ -25,7 +26,7 @@
 
     if ($result->num_rows > 0) {
         // output data of each row
-        echo '<div class="form-row align-items-center divstandard">
+        echo '<div class=" align-items-center divstandard">
         <table class="table table-striped ">
             <thead>
             <tr>

@@ -78,8 +78,9 @@
                         echo '</select>
                     </div>
                     </div>
-                        <button type="submit" class="btn btn-light btn-lg" name="updateProduit">Modifier</button>
-                        <input type="button" value="Annuler" onClick="javascript:history.go(-1)" class="btn btn-light btn-lg"/>
+                        <button type="submit" class="btn btn-info btn-lg" name="updateProduit">Modifier</button>
+                        <button type="submit" class="btn btn-danger btn-lg" name="deleteProduit">Supprimer</button>
+                        <input type="button" value="Annuler" onClick="javascript:history.go(-1)" class="btn btn-info btn-lg"/>
                     </div>
                 </form>';  
                 }
@@ -108,7 +109,7 @@
         $result = $conn->query($sql);
         if ($result->num_rows > 0)
         {
-            echo "<script>alert(\"nom de catégorie est deja exist\")</script>";
+            echo "<script>alert(\"nom de produit est deja exist\")</script>";
             $conn->close();
         }
         else
@@ -140,5 +141,12 @@
             $conn->close();
             echo '<script>javascript:history.go(-1);</script>';
         }
+    }
+    if(isset($_POST['deleteProduit']))
+    {
+        
+        echo "<script>if(confirm('Voulez-vous vraiment supprimer ce produit?'))
+        {window.location.href = 'deleteProduit.php?id=$id'};
+        </script>";
     }
 ?>

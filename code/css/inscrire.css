@@ -1,65 +1,21 @@
 /* sign in FORM */
+
 body {
-    background-image: url(https://thumbs.dreamstime.com/b/famille-avec-des-paniers-se-tenant-au-studio-33569755.jpg);
-    background-repeat: no-repeat;
-    background-position: right;
-    background-position-y: top;
+    margin-top: 10%;
 }
+
 .container-fluid {
     padding:50px;
-    height: 85vh;
-} 
+}
 
-div#cnt {
-    margin-left: 10px;
-    margin-top: 65px;
+.container {
+    background-color:white; 
 }
 
 .row {
-    margin-top: 8%;
+    margin-top: 10%;
 }
 
 #title {
     font-family: sans-serif;
-    color: #17a2b8;
-    font-weight: 900;
 }
-
-.vl {
-    border-left: 5px solid #17a2b8;
-    height: 380px;
-    margin-left: 50%;
-    margin-top: -20px;
-}
-#main {
-     box-shadow: 0 14px 28px rgba(51, 183, 204, 1), 0 10px 10px rgba(0, 0, 0, 0.22);
-     height: 380px;
-     margin: 0 auto;
-     max-width: 400px;
-     overflow: hidden;
-     position: relative;
-     padding-top: 1pc;	
-}
-#main2 {
-    box-shadow: 0 14px 28px rgba(51, 183, 204, 1), 0 10px 10px rgba(0, 0, 0, 0.22);
-    height: 200px;
-    margin: 0 auto;
-    max-width: 400px;
-    overflow: hidden;
-    position: relative;
-    padding-top: 1pc;
-}
-.border {
-    border: 3px solid #17a2b8!important;
-    border-radius: 25px;
-    height: 100px;
-}
-
-.ml3 {
-    font-weight: 600;
-    font-size: 2.5em;
-    text-align: center;
-    color: #17a2b8;
-    padding-top: 1pc;
-    margin-top: 12px;
-} 

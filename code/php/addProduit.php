@@ -71,7 +71,7 @@
         echo '</select>
       </div>
     </div>
-        <button type="submit" class="btn btn-light btn-lg" name="addProduit">ajouter</button>
+        <button type="submit" class="btn btn-info btn-lg" name="addProduit">ajouter</button>
     </div>
   </form>';
   include('footer.php');
