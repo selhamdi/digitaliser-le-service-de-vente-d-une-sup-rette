@@ -52,7 +52,8 @@ CREATE TABLE `commande` (
   `idCommande` int(11) NOT NULL,
   `idUser` int(11) DEFAULT NULL,
   `dateCommande` datetime NOT NULL,
-  `PrixUT` float NOT NULL
+  `PrixUT` float NOT NULL,
+  is_standard			TINYINT(1) not null,
 ) ;
 
 -- --------------------------------------------------------
